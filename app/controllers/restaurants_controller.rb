@@ -9,26 +9,26 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
-  def new
+  # def new
     
-  end
+  # end
 
-  def update
+  # def update
   
-  end
+  # end
 
-  def create
+  # def create
 
-  end
+  # end
 
-  def edit
+  # def edit
 
-  end
+  # end
 
-  def destroy
+  # def destroy
 
 
-  end
+  # end
 
   private
   def sort_column
