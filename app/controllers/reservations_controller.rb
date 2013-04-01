@@ -13,6 +13,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(params[:reservation])
     @reservation.user_id = current_user.id
     @reservation.restaurant_id = @restaurant.id
+    # @reservation.date = [@reservation.date_1i, @reservation.date_2i, @reservation.date_3i].join("-")
     #check to see if capacity is available
     @check = Reservation.sum(:people, :conditions => {:restaurant_id => @restaurant.id, :date => @reservation.date, :time => @reservation.time})
     #http://en.wikibooks.org/wiki/Ruby_on_Rails/ActiveRecord/Calculations#Sum

@@ -2,6 +2,8 @@ SamirTable::Application.routes.draw do
 
 
 
+  get "users/index"
+
   resources :restaurants do
     resources :reservations
   end

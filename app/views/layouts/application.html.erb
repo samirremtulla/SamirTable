@@ -2,9 +2,12 @@
 <html>
 <head>
   <title>SamirTable</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+   <%=stylesheet_link_tag    "application", :media => "all" %>
+   <%=javascript_include_tag "application" %>
+
   <%= csrf_meta_tags %>
+
+
 </head>
 
 <div class = "container-fluid">
@@ -19,8 +22,8 @@
       <div class="brand"><%= link_to "SamirTable", root_path%></div>
       <div class="nav-collapse">
         <ul class="nav">
-          <li><%= link_to "Reserve" %></li>
           <% if user_signed_in? %>
+            <li><%= link_to "My Reservations", users_index_path %></li>
             <li> <%= link_to "Edit Profile", edit_user_registration_path %></li>
             <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             <li><a> Signed in as <%=current_user.email %></li></a>
