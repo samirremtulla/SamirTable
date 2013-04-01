@@ -1,7 +1,8 @@
 class RestaurantsController < ApplicationController
-  
+  helper_method :sort_column, :sort_direction
+
   def index
-    @restaurants = Restaurants.all
+    @restaurants = Restaurant.order(sort_column + ' ' + sort_direction)
   end
 
   def show
@@ -29,5 +30,15 @@ class RestaurantsController < ApplicationController
 
   end
 
+  private
+  def sort_column
+    params[:sort] || "name"
+  end
+
+  def sort_direction
+    params[:direction] || "asc"
+  end
 
 end
+
+#http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast

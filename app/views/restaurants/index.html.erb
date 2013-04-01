@@ -1,2 +1,28 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<h1>Welcome!</h1>
+<p>Here are a few Restaurants that may interest you!</p>
+
+
+<table class = "table table-striped">
+  <thead>
+    <tr>
+      <th><%= sortable "name", "Name" %> </th>
+      <th><%= sortable "cuisine" %> </th>
+      <th><%= sortable "rating" %> </th>
+      <th><%= sortable "city" %> </th>
+      <th><%= sortable "website" %> </th>
+      <th><%= sortable "capacity" %> </th>
+    </tr>
+  </thead>
+
+  <% for restaurant in @restaurants %>
+    <tr>
+      <td><%=restaurant.name%> </td>
+      <td><%=restaurant.cuisine%></td>
+      <td><%=restaurant.rating%></td>
+      <td><%=restaurant.city%></td>
+      <td><%=restaurant.website%></td>
+      <td><%=restaurant.capacity%></td>
+    </tr>
+  <%end%>
+
+</table>
