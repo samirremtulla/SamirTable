@@ -1,0 +1,18 @@
+<h1>Reservation for <%=@restaurant.name%></h1>
+
+<%= form_for ([:restaurant, @reservation]) do |f| %>
+
+<%=f.label :date%>
+<%=f.select :date, [[1,1],[2,2],[3,3],[4,4],[5,5]] %>
+
+<%=f.label :time%>
+<%=f.select :time, [[1,1],[2,2],[3,3]] %>
+
+<%=f.label :people%>
+<%=f.text_field :people %>
+
+<p></p>
+
+<%= f.submit %>
+
+<%end%>

@@ -1,7 +1,11 @@
 SamirTable::Application.routes.draw do
 
 
-  resources :restaurants
+
+  resources :restaurants do
+    resources :reservations
+  end
+
   devise_for :users
 
   # The priority is based upon order of creation:

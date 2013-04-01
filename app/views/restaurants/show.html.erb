@@ -15,7 +15,7 @@
 <button class = "btn btn-primary"> 
 
   <% if user_session %>
-    <%=link_to "Reserve"%>
+    <%=link_to "Reserve", new_restaurant_reservation_path(@restaurant)%>
 
   <% else %>
     <%= link_to "Login", new_user_session_path %>
