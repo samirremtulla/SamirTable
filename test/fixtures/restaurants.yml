@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyText
+  website: MyText
+  rating: 1
+  cuisine: MyText
+  city: MyText
+  capacity: 1
+
+two:
+  name: MyText
+  website: MyText
+  rating: 1
+  cuisine: MyText
+  city: MyText
+  capacity: 1
