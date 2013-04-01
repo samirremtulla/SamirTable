@@ -1,5 +1,7 @@
 <h1>Reservation for <%=@restaurant.name%></h1>
 
+<%= flash[:notice] %>
+
 <%= form_for ([:restaurant, @reservation]) do |f| %>
 
 <%=f.label :date%>

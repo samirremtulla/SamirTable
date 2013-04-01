@@ -17,20 +17,15 @@ class ReservationsController < ApplicationController
     @check = Reservation.sum(:people, :conditions => {:restaurant_id => @restaurant.id, :date => @reservation.date, :time => @reservation.time})
     #http://en.wikibooks.org/wiki/Ruby_on_Rails/ActiveRecord/Calculations#Sum
 
-    if @check < @restaurant.capacity
+    if (@check < @restaurant.capacity) && (@reservation.people < @restaurant.capacity)
       if @reservation.save
         redirect_to root_path, notice: "Thank you for making a reservation!"
       else
-        render action: :new, error: "HELLO"
+        render action: :new, notice: "WTF"
       end
     else
-      render action: :new, error: "HELLO"
+      render action: :new, notice: "HELLO"
     end
-
-    #if it is ok, update capacity for the date
-    #if not, send error
-
-    #save
 
   end
 
