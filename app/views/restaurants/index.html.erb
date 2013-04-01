@@ -11,6 +11,7 @@
       <th><%= sortable "city" %> </th>
       <th><%= sortable "website" %> </th>
       <th><%= sortable "capacity" %> </th>
+      <th>More Info!</th>
     </tr>
   </thead>
 
@@ -22,6 +23,7 @@
       <td><%=restaurant.city%></td>
       <td><%=restaurant.website%></td>
       <td><%=restaurant.capacity%></td>
+      <td><%= link_to "More Info", restaurant_path(restaurant) %></td>
     </tr>
   <%end%>
 

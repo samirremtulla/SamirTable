@@ -1,2 +1,19 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h3><%=@restaurant.name%></h3>
+<dl class = "unstyled">
+  <dt><%=@restaurant.cuisine%></dt>
+  <dd><%=@restaurant.rating%>  Stars</dd>
+  <dd><%=@restaurant.city%></dd>
+  <dd><%=@restaurant.website%></dd>
+  <dd><%=@restaurant.capacity%></dd>
+</dl>
+
+<button class = "btn btn-primary"> 
+
+  <% if user_session %>
+    <%=link_to "Reserve"%>
+
+  <% else %>
+    <%= link_to "Login", new_user_session_path %>
+  <%end%>
+
+</button>
