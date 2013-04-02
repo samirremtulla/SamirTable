@@ -2,13 +2,14 @@ SamirTable::Application.routes.draw do
 
 
 
-  get "users/index"
+  # get "users/index"
 
   resources :restaurants do
-    resources :reservations
+    resources :reservations, :only => [:new, :create]
   end
 
   devise_for :users
+  resources :reservations, :only => [:index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

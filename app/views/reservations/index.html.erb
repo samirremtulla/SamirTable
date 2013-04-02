@@ -1,2 +1,23 @@
-<h1>Reservations for</h1>
+<h1>Reservations for <%=current_user.email%></h1>
 
+<table class = "table table striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>People</th>
+      <th>Restaurant</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% current_user.reservations.each do |reservation|%>
+      <td><%= reservation.date.strftime("%m/%d/%Y") %> </td>
+      <td><%= reservation.time %> </td>
+      <td><%= reservation.people %> </td>
+      <td><%= reservation.restaurant.name %></td>
+    </tr>
+    <%end%>
+  
+</tbody>
+</table>

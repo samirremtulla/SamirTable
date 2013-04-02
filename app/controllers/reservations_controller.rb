@@ -1,15 +1,16 @@
 class ReservationsController < ApplicationController
-  before_filter :load_restaurant
+  #before_filter :load_restaurant
 
   def index
-    @reservations = @restaurant.reservations
   end
 
   def new
+    load_restaurant
     @reservation = Reservation.new
   end
 
   def create
+    load_restaurant
     @reservation = Reservation.new(params[:reservation])
     @reservation.user_id = current_user.id
     @reservation.restaurant_id = @restaurant.id
