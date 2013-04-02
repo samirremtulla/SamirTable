@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130401170247) do
+ActiveRecord::Schema.define(:version => 20130402210946) do
 
   create_table "reservations", :force => true do |t|
-    t.integer  "date"
     t.integer  "time"
     t.integer  "people"
     t.integer  "user_id"
     t.integer  "restaurant_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.datetime "date"
   end
 
   add_index "reservations", ["restaurant_id"], :name => "index_reservations_on_restaurant_id"
