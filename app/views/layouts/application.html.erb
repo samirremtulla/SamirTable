@@ -23,7 +23,7 @@
       <div class="nav-collapse">
         <ul class="nav">
           <% if user_signed_in? %>
-            <li><%= link_to "My Reservations", users_index_path %></li>
+            <li><%= link_to "My Reservations", restaurants_path %></li>
             <li> <%= link_to "Edit Profile", edit_user_registration_path %></li>
             <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             <li><a> Signed in as <%=current_user.email %></li></a>
